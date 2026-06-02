@@ -44,16 +44,17 @@ export function CustomersPage() {
   const [localSearch, setLocalSearch] = useState(searchParams.search || '');
   const debouncedSearch = useDebounce(localSearch, 300);
 
-  // Synchroniser la recherche debouncée vers l'URL
   useEffect(() => {
+  if (debouncedSearch !== searchParams.search) {
     navigate({
-      search: {
-        ...searchParams,
+      search: (prev) => ({
+        ...prev,
         search: debouncedSearch,
-        page: 1, // Réinitialise à la page 1 lors d'une recherche
-      },
+        page: 1,
+      }),
     });
-  }, [debouncedSearch, navigate, searchParams]);
+  }
+}, [debouncedSearch, navigate, searchParams.search]);
 
   // Requête API via React Query
   const { data, isLoading, isError, refetch } = useCustomers(searchParams);
