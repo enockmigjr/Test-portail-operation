@@ -51,14 +51,34 @@ pnpm dev
 ```
 Ouvrez l'adresse indiquée (généralement `http://localhost:5173`). MSW démarrera automatiquement pour simuler l'API REST.
 
-### 3. Exécuter la suite de tests
-Les tests unitaires couvrent la base de données en mémoire, les filtres et l'historique d'audit d'activités. Exécutez-les via :
+### 3. Validation Globale (Qualité & DevOps)
+Pour exécuter toutes les vérifications locales (eslint, tsc, vitest, playwright chromium et build storybook) en une seule fois :
 ```bash
-pnpm test
+pnpm run test:all
 ```
 
-### 4. Vérification du typage strict
-Pour s'assurer qu'aucune régression de type n'est présente :
-```bash
-pnpm tsc --noEmit
-```
+### 4. Exécuter la suite de tests
+* **Tests unitaires (Vitest)** :
+  ```bash
+  pnpm test
+  ```
+* **Tests End-to-End (Playwright)** :
+  ```bash
+  pnpm test:e2e
+  ```
+
+### 5. Storybook (Documentation visuelle)
+Storybook documente l'ensemble de nos composants réutilisables.
+* **Lancer l'interface interactive** :
+  ```bash
+  pnpm run storybook
+  ```
+* **Compiler le site statique** :
+  ```bash
+  pnpm run build-storybook
+  ```
+
+### 6. Hooks de Commit (Husky & lint-staged)
+Husky et lint-staged sont configurés pour s'exécuter automatiquement à chaque commit :
+* Ils formatent et valident uniquement les fichiers indexés par Git (`eslint --fix` et `tsc --noEmit`).
+* Si une erreur est détectée, le commit est bloqué afin de maintenir le dépôt toujours propre.

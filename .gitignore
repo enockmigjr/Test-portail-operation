@@ -26,3 +26,11 @@ dist-ssr
 # Documentation locale (exclue de git)
 docs/
 docs*
+
+# Playwright
+playwright-report/
+test-results/
+
+# Storybook
+storybook-static/
+.storybook-cache/
