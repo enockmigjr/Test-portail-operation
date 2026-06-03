@@ -266,7 +266,7 @@ export function CustomersPage() {
                 // Fallback en cas d'erreur
                 <TableRow>
                   <TableCell colSpan={6} className="h-64 text-center">
-                    <ErrorFallback onRetry={refetch} />
+                    <ErrorFallback onRetry={() => refetch()} />
                   </TableCell>
                 </TableRow>
               ) : !data || data.data.length === 0 ? (

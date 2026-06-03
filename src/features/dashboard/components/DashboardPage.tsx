@@ -122,7 +122,7 @@ export function DashboardPage() {
         <ErrorFallback
           title="Could not load dashboard statistics"
           message="We encountered an issue while calling the metrics API. Please try again."
-          onRetry={refetch}
+          onRetry={() => refetch()}
         />
       </div>
     );
