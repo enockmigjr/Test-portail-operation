@@ -1,0 +1,15 @@
+import{t as e}from"./jsx-runtime-BjpsfUvM.js";import{t}from"./createLucideIcon-CrVwlb7G.js";import{t as n}from"./button-DTv0CXAF.js";var r=t(`search`,[[`path`,{d:`m21 21-4.34-4.34`,key:`14j7rj`}],[`circle`,{cx:`11`,cy:`11`,r:`8`,key:`4ej97u`}]]),i=e();function a({title:e=`No results found`,description:t=`Try adjusting your search terms or filters to find what you are looking for.`,icon:a=(0,i.jsx)(r,{className:`h-10 w-10 text-slate-400`}),actionLabel:o,onAction:s}){return(0,i.jsxs)(`div`,{className:`flex flex-col items-center justify-center py-12 px-4 text-center rounded-xl bg-white border border-dashed border-slate-200`,children:[(0,i.jsx)(`div`,{className:`flex items-center justify-center h-16 w-16 rounded-full bg-slate-50 border border-slate-100 shadow-sm mb-4`,children:a}),(0,i.jsx)(`h3`,{className:`text-lg font-semibold text-slate-900 mb-1`,children:e}),(0,i.jsx)(`p`,{className:`text-sm text-slate-500 max-w-md text-wrap mb-6`,children:t}),o&&s&&(0,i.jsx)(n,{onClick:s,variant:`outline`,size:`sm`,children:o})]})}a.__docgenInfo={description:``,methods:[],displayName:`EmptyState`,props:{title:{required:!1,tsType:{name:`string`},description:``,defaultValue:{value:`'No results found'`,computed:!1}},description:{required:!1,tsType:{name:`string`},description:``,defaultValue:{value:`'Try adjusting your search terms or filters to find what you are looking for.'`,computed:!1}},icon:{required:!1,tsType:{name:`ReactNode`},description:``,defaultValue:{value:`<Search className="h-10 w-10 text-slate-400" />`,computed:!1}},actionLabel:{required:!1,tsType:{name:`string`},description:``},onAction:{required:!1,tsType:{name:`signature`,type:`function`,raw:`() => void`,signature:{arguments:[],return:{name:`void`}}},description:``}}};var o={title:`Feedback/EmptyState`,component:a,tags:[`autodocs`]},s={args:{}},c={args:{title:`No Active Support Tickets`,description:`This customer has no active support tickets associated with their account at the moment.`}},l={args:{title:`No matching customer found`,description:`No accounts correspond to the selected filters and search query.`,actionLabel:`Reset Directory Filters`,onAction:()=>alert(`Filters reset!`)}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {}
+}`,...s.parameters?.docs?.source}}},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'No Active Support Tickets',
+    description: 'This customer has no active support tickets associated with their account at the moment.'
+  }
+}`,...c.parameters?.docs?.source}}},l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'No matching customer found',
+    description: 'No accounts correspond to the selected filters and search query.',
+    actionLabel: 'Reset Directory Filters',
+    onAction: () => alert('Filters reset!')
+  }
+}`,...l.parameters?.docs?.source}}};var u=[`Default`,`CustomContent`,`WithAction`];export{c as CustomContent,s as Default,l as WithAction,u as __namedExportsOrder,o as default};

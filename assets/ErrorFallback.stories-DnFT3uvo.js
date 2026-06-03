@@ -1,0 +1,14 @@
+import{t as e}from"./jsx-runtime-BjpsfUvM.js";import{t}from"./createLucideIcon-CrVwlb7G.js";import{t as n}from"./button-DTv0CXAF.js";var r=t(`triangle-alert`,[[`path`,{d:`m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3`,key:`wmoenq`}],[`path`,{d:`M12 9v4`,key:`juzpu7`}],[`path`,{d:`M12 17h.01`,key:`p32p05`}]]),i=e();function a({title:e=`An error occurred`,message:t=`We encountered an error while loading this data. Please try again.`,onRetry:a}){return(0,i.jsxs)(`div`,{className:`flex flex-col items-center justify-center py-12 px-4 text-center rounded-xl bg-red-50/50 border border-red-100`,children:[(0,i.jsx)(`div`,{className:`flex items-center justify-center h-12 w-12 rounded-full bg-red-100 border border-red-200 text-red-600 mb-4 shadow-sm`,children:(0,i.jsx)(r,{className:`h-6 w-6`})}),(0,i.jsx)(`h3`,{className:`text-lg font-semibold text-red-900 mb-1`,children:e}),(0,i.jsx)(`p`,{className:`text-sm text-red-700 max-w-sm mb-6`,children:t}),a&&(0,i.jsx)(n,{onClick:a,variant:`destructive`,size:`sm`,className:`shadow-sm`,children:`Retry Request`})]})}a.__docgenInfo={description:``,methods:[],displayName:`ErrorFallback`,props:{title:{required:!1,tsType:{name:`string`},description:``,defaultValue:{value:`'An error occurred'`,computed:!1}},message:{required:!1,tsType:{name:`string`},description:``,defaultValue:{value:`'We encountered an error while loading this data. Please try again.'`,computed:!1}},onRetry:{required:!1,tsType:{name:`signature`,type:`function`,raw:`() => void`,signature:{arguments:[],return:{name:`void`}}},description:``}}};var o={title:`Feedback/ErrorFallback`,component:a,tags:[`autodocs`]},s={args:{}},c={args:{title:`Database connection failed`,message:`Could not connect to the remote PostgreSQL node. Please verify your VPN credentials.`}},l={args:{title:`Failed to load details`,message:`We were unable to load the customer logs at this time.`,onRetry:()=>alert(`Retrying to fetch data...`)}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {}
+}`,...s.parameters?.docs?.source}}},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'Database connection failed',
+    message: 'Could not connect to the remote PostgreSQL node. Please verify your VPN credentials.'
+  }
+}`,...c.parameters?.docs?.source}}},l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'Failed to load details',
+    message: 'We were unable to load the customer logs at this time.',
+    onRetry: () => alert('Retrying to fetch data...')
+  }
+}`,...l.parameters?.docs?.source}}};var u=[`Default`,`CustomMessage`,`WithRetryButton`];export{c as CustomMessage,s as Default,l as WithRetryButton,u as __namedExportsOrder,o as default};
