@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { useDashboardStats } from '../hooks/useDashboardStats';
+import { formatDate } from '@/lib/format';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -71,15 +72,6 @@ export function DashboardPage() {
     },
   ];
 
-  // Formatter pour la date de la timeline
-  const formatDate = (isoString: string) => {
-    return new Date(isoString).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
 
   const getTimelineIcon = (type: string) => {
     switch (type) {
@@ -198,7 +190,7 @@ export function DashboardPage() {
             {isLoading ? (
               <Skeleton className="h-[280px] w-full" />
             ) : stats && stats.customersByMonth.length > 0 ? (
-              <div className="h-[280px] w-full overflow-x-auto">
+              <div className="h-[280px] w-full overflow-x-auto overflow-y-hidden md:overflow-hidden">
                 <div className="h-full min-w-[600px] md:min-w-0 w-full">
                   <ResponsiveContainer width="100%" height={280} minWidth={0} minHeight={0}>
                     <AreaChart data={stats.customersByMonth} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>

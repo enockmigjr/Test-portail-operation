@@ -24,6 +24,7 @@ import {
 import { useCustomerDetails } from '../hooks/useCustomerDetails';
 import { useCustomerActivities } from '../hooks/useCustomerActivities';
 import { useAccountAction } from '@/features/operations/hooks/useAccountAction';
+import { formatDate } from '@/lib/format';
 import { StatusBadge } from '@/components/feedback/StatusBadge';
 import { ActionConfirmDialog } from '@/features/operations/components/ActionConfirmDialog';
 import { Button } from '@/components/ui/button';
@@ -64,17 +65,6 @@ export function CustomerDetailPage() {
         return `Account ${activeAction}d successfully!`;
       },
       error: `Could not complete the ${activeAction} operation.`,
-    });
-  };
-
-  // Helper pour formater la date
-  const formatDate = (isoString: string) => {
-    return new Date(isoString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
     });
   };
 

@@ -23,7 +23,7 @@ export function EmptyState({
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-slate-900 mb-1">{title}</h3>
-      <p className="text-sm text-slate-500 max-w-sm mb-6">{description}</p>
+      <p className="text-sm text-slate-500 max-w-md text-wrap mb-6">{description}</p>
       {actionLabel && onAction && (
         <Button onClick={onAction} variant="outline" size="sm">
           {actionLabel}

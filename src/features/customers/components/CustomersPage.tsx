@@ -8,6 +8,7 @@ import {
   RotateCcw,
 } from 'lucide-react';
 import { useCustomers } from '../hooks/useCustomers';
+import { formatDate } from '@/lib/format';
 import { StatusBadge } from '@/components/feedback/StatusBadge';
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { ErrorFallback } from '@/components/feedback/ErrorFallback';
@@ -151,15 +152,6 @@ export function CustomersPage() {
         </div>
       </TableHead>
     );
-  };
-
-  // Helper pour formater la date
-  const formatDate = (isoString: string) => {
-    return new Date(isoString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    });
   };
 
   return (

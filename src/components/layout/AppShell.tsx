@@ -31,14 +31,15 @@ export function AppShell({ children }: AppShellProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50/50 flex">
+    // Sécurité : On force le conteneur principal à faire exactement la taille de l'écran, sans scroll global.
+    <div className="h-screen w-screen bg-slate-50/50 flex overflow-hidden select-none">
       {/* Sidebar Desktop */}
-      <aside className="hidden md:flex flex-col w-64 bg-slate-900 text-slate-100 border-r border-slate-800 sticky top-0 h-screen">
+      <aside className="hidden md:flex flex-col w-64 bg-slate-900 text-slate-100 border-r border-slate-800 h-full shrink-0">
         <div className="h-16 flex items-center gap-2 px-6 border-b border-slate-800">
           <ShieldAlert className="h-6 w-6 text-indigo-400" />
           <span className="font-semibold text-lg tracking-wider text-white">CustOps Portal</span>
         </div>
-        <nav className="flex-1 py-6 px-4 space-y-1">
+        <nav className="flex-1 py-6 px-4 space-y-1 overflow-y-auto">
           {navigation.map((item) => {
             const isActive = currentPath.startsWith(item.href);
             return (
@@ -85,7 +86,7 @@ export function AppShell({ children }: AppShellProps) {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            <nav className="flex-1 py-6 px-4 space-y-1">
+            <nav className="flex-1 py-6 px-4 space-y-1 overflow-y-auto">
               {navigation.map((item) => {
                 const isActive = currentPath.startsWith(item.href);
                 return (
@@ -115,9 +116,10 @@ export function AppShell({ children }: AppShellProps) {
       )}
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Header */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shadow-sm">
+      {/* Correction ici : h-full empêche la div de grandir au-delà de l'écran */}
+      <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+        {/* Header - Reste fixe en haut grâce au flex-col et h-full du parent */}
+        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shadow-sm shrink-0">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
@@ -146,7 +148,7 @@ export function AppShell({ children }: AppShellProps) {
           </div>
         </header>
 
-        {/* Content Container */}
+        {/* Content Container - C'est cette zone exacte qui va gérer le scroll */}
         <main className="flex-1 overflow-y-auto bg-slate-50/50">
           <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 animate-in fade-in duration-200">
             {children}
@@ -155,5 +157,6 @@ export function AppShell({ children }: AppShellProps) {
       </div>
     </div>
   );
-};
+}
+
 export default AppShell;
