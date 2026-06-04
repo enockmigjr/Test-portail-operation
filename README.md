@@ -40,8 +40,14 @@ Le projet s'appuie sur une pile technologique moderne et robuste, garantissant d
 
 ### 1. Installation des dépendances
 Le projet utilise `pnpm`. Installez les packages via :
+
 ```bash
 pnpm install
+```
+
+* **Installer l'écosystème Playwright si nécessaire :**
+```bash
+pnpm playwright install
 ```
 
 ### 2. Démarrer le serveur de développement local
@@ -62,23 +68,44 @@ pnpm run test:all
   ```bash
   pnpm test
   ```
-* **Tests End-to-End (Playwright)** :
+* **Lancer les tests unitaires avec interface graphique (Vitest UI) :**
+  ```bash
+  pnpm test:ui
+  ```
+* **Lancer les tests End-to-End (Playwright) :**
   ```bash
   pnpm test:e2e
+  ```
+* **Lancer les tests End-to-End avec interface graphique (Playwright UI) :**
+  ```bash
+  pnpm test:e2e:ui
+  ```
+* **Afficher le rapport de tests Playwright :**
+  ```bash
+  pnpm test:e2e:show
+  ```
+* **Lancer le serveur de développement :**
+  ```bash
+  pnpm preview
   ```
 
 ### 5. Storybook (Documentation visuelle)
 Storybook documente l'ensemble de nos composants réutilisables.
 * **Lancer l'interface interactive** :
   ```bash
-  pnpm run storybook
+  pnpm storybook
   ```
 * **Compiler le site statique** :
   ```bash
-  pnpm run build-storybook
+  pnpm build-storybook
   ```
 
 ### 6. Hooks de Commit (Husky & lint-staged)
 Husky et lint-staged sont configurés pour s'exécuter automatiquement à chaque commit :
 * Ils formatent et valident uniquement les fichiers indexés par Git (`eslint --fix` et `tsc --noEmit`).
 * Si une erreur est détectée, le commit est bloqué afin de maintenir le dépôt toujours propre.
+
+* **Hooks de Commit (Husky & lint-staged) :**
+  ```bash
+  pnpm prepare
+  ```
