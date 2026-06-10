@@ -34,3 +34,7 @@ test-results/
 # Storybook
 storybook-static/
 .storybook-cache/
+
+#contexte
+contexte/
+contexte*
